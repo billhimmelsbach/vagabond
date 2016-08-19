@@ -40,6 +40,18 @@ CITY = [
   {
     name: "San Francisco",
     image: "http://cats2010.com/wp-content/uploads/2014/09/Untitled_Panorama4-2.jpg "
+  },
+  {
+    name: "Boston",
+    image: "http://art.onetravelsource.com/uploads/8/CB6271D0-0A33-4CCD-98775E640E9612B5.jpg"
+  },
+  {
+    name: "San Diego",
+    image: "http://www.sandiego.com/sites/sandiego.com/files/styles/gallery_listing_full/public/content/gallery/images/pacific_beach_wind_surfers.jpg?itok=T4zsdl1k"
+  },
+  {
+    name: "New York",
+    image: "https://pcavote.files.wordpress.com/2014/07/empire-state.jpg"
   }
 ]
 
