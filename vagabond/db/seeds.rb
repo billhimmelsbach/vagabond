@@ -52,8 +52,7 @@ CITY = [
   {
     name: "New York",
     image: "https://pcavote.files.wordpress.com/2014/07/empire-state.jpg"
-  },
-
+  }
 ]
 
 p Post.create(POSTS)
