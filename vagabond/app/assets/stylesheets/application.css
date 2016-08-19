@@ -15,21 +15,27 @@
  *= require_self
  */
 
- .navbar-brand>img {
-   padding: 0px;
-   height: 40px;
-   width: 140px;
- }
- .navbar {
-   height: 70px;
- }
- .navbar-nav {
-   margin-top: 10px;
- }
+body {
+ background-color: #ffffff ;
+ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+ padding-top: 60px;
+}
 
- h1, h2, h3, h4 {
-   font-family: 'Roboto', sans-serif;
- }
+h1, h2, h3, h4 {
+ font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand>img {
+ padding: 0px;
+ height: 40px;
+ width: 140px;
+}
+.navbar {
+ height: 70px;
+}
+.navbar-nav {
+ margin-top: 10px;
+}
 
 .btn a {
   text-decoration: none !important;
@@ -55,12 +61,6 @@
 .btn-primary {
    background: #0099cc;
    color: #ffffff;
-}
-
-body {
-  background-color: #ffffff ;
-  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
-  padding-top: 60px;
 }
 
 .post-image-container {
