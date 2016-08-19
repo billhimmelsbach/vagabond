@@ -22,4 +22,15 @@ hash = [
   }
 ]
 
+USERS = [
+  {
+    first_name: "Kathleen",
+    last_name: "Hanna",
+    email: "khannah@test.com",
+    password_digest: "$2a$10$Dnb1rMCPOFcQfSKDPdVXY.G.xkWyTus6liF3q5Q1.fB/AAIQgSZFu",
+    image_url: "http://assets.rollingstone.com/assets/images/story/kathleen-hanna-moves-forward-with-the-julie-ruin-20130904/hanna-306-1378408387.jpg"
+  }
+]
+
 p Post.create(hash)
+p User.create(USERS)
