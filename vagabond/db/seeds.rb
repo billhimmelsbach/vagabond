@@ -32,5 +32,13 @@ USERS = [
   }
 ]
 
+CITY = [
+  {
+    name: "San Francisco",
+    image: "http://www.newsonair.org/images/marvelous-san-francisco-landscape-1-golden-gate-bridge-san-francisco-1394-x-650.jpg"
+  }
+]
+
 p Post.create(POSTS)
 p User.create(USERS)
+p City.create(CITY)
