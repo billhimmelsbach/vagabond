@@ -20,10 +20,16 @@
   </div>
 </div>
 
-<div class="col-xs-9">
+<div class="col-md-9">
   <%  @posts.each do |t| %>
-    <%= link_to "#{t.title}", "/posts/#{t.id}" %>
-  <br>
-  <hr>
+    <div class="panel panel-default">
+      <div class="panel-heading">
+         <%= link_to "#{t.title}", "/posts/#{t.id}" %>
+      </div>
+      <div class="panel-body">
+        Pour-over twee scenester. Retro street art quinoa, listicle cronut pour-over skateboard intelligentsia butcher chartreuse authentic small batch fap. Fixie hammock man braid vegan, pinterest kinfolk keffiyeh humblebrag man bun kitsch paleo 90's. Occupy trust fund pitchfork, letterpress disrupt portland lomo scenester street art listicle affogato selvage schlitz. Bitters pork belly tattooed, cold-pressed authentic chartreuse tote bag brunch kickstarter +1 mustache tumblr whatever sriracha.
+      </div>
+      <br>
+    </div>
   <% end %>
 </div>
