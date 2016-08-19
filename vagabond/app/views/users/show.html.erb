@@ -1,20 +1,19 @@
-<div>
+<div class="col-xs-3">
 <p>First Name: <%=  @user.first_name %> </p>
 <p>Last Name: <%=  @user.last_name %> </p>
 <p>Email: <%= @user.email %> </p>
 <p>Date Joined: <%= @user.created_at.localtime.strftime("%b %-d, %Y %H:%M") %> </p>
 <p>Current City: <%=  @user.current_city %> </p>
-</div>
-
-<%  @posts.each do |t| %>
-
-<%= link_to "#{t.title}", "/posts/#{t.id}" %>
-<br />
-<hr />
-<% end %>
-
 <div>
-<%= button_to "Delete", @user, method: :delete %>
-<button> <%= link_to "Edit", edit_user_path(@user) %> </button>
+<button class="btn-danger"><%= link_to "Delete", @user, method: :delete %></button>
+<button class="btn-info"> <%= link_to "Edit", edit_user_path(@user) %> </button>
 </div>
-<button> <%= link_to "Back", user_path(current_user) %> </button>
+</div>
+
+<div class="col-xs-9">
+<%  @posts.each do |t| %>
+  <%= link_to "#{t.title}", "/posts/#{t.id}" %>
+<br>
+<hr>
+<% end %>
+</div>
