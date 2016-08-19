@@ -1,6 +1,9 @@
 Sign Up
 
-<%= form_for @user do |f| %>
+<%= form_for @user, html: { multipart: true } do |f| %>
+  <div class="form-group">
+    <%= f.file_field :image %>
+  </div>
   <div>
     <%= f.text_field :first_name, placeholder: "First Name" %>
   </div>

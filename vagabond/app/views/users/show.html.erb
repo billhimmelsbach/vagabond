@@ -1,20 +1,20 @@
 <div>
-<p>First Name: <%=  @user.first_name %> </p>
-<p>Last Name: <%=  @user.last_name %> </p>
-<p>Email: <%= @user.email %> </p>
-<p>Date Joined: <%= @user.created_at.localtime.strftime("%b %-d, %Y %H:%M") %> </p>
-<p>Current City: <%=  @user.current_city %> </p>
+  <%= link_to image_tag(@user.image.url(:med)), @user.image.url %>
+  <p>First Name: <%=  @user.first_name %> </p>
+  <p>Last Name: <%=  @user.last_name %> </p>
+  <p>Email: <%= @user.email %> </p>
+  <p>Date Joined: <%= @user.created_at.localtime.strftime("%b %-d, %Y %H:%M") %> </p>
+  <p>Current City: <%=  @user.current_city %> </p>
 </div>
 
 <%  @posts.each do |t| %>
-
-<%= link_to "#{t.title}", "/posts/#{t.id}" %>
-<br />
-<hr />
+  <%= link_to "#{t.title}", "/posts/#{t.id}" %>
+  <br />
+  <hr />
 <% end %>
 
 <div>
-<%= button_to "Delete", @user, method: :delete %>
-<button> <%= link_to "Edit", edit_user_path(@user) %> </button>
+  <%= button_to "Delete", @user, method: :delete %>
+  <button> <%= link_to "Edit", edit_user_path(@user) %> </button>
+  <button> <%= link_to "Back", root_path %> </button>
 </div>
-<button> <%= link_to "Back", user_path(current_user) %> </button>
