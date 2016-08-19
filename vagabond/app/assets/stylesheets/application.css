@@ -18,3 +18,21 @@
  h1, h2, h3, h4 {
    font-family: 'Roboto', sans-serif;
  }
+
+ body {
+   padding-top: 60px;
+ }
+
+ .navbar-brand>img {
+   padding: 0px;
+   height: 40px;
+   width: 140px;
+ }
+
+ .navbar {
+   height: 70px;
+ }
+
+ .navbar-nav {
+   margin-top: 10px;
+ }
