@@ -2,7 +2,7 @@
 
 <div class="register">
 
-  <%= form_for @post do |f| %>
+  <%= form_for :post, url: new_city_post_path  do |f| %>
     <div class="register-input">
       <%= f.text_field :title, placeholder: "Title" %>
     </div>
@@ -10,7 +10,7 @@
       <%= f.text_area :content, placeholder: "Content" %>
     </div>
     <div class="register-input">
-      <%= f.image_field :image, placeholder: "Image" %>
+      <%= f.text_field :image, placeholder: "Image" %>
     </div>
     <%= f.submit "Post" %>
   <% end %>
