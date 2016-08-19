@@ -15,6 +15,56 @@
  *= require_self
  */
 
- h1, h2, h3, h4 {
-   font-family: 'Roboto', sans-serif;
- }
+body {
+ background-color: #ffffff ;
+ background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+ padding-top: 60px;
+}
+
+h1, h2, h3, h4 {
+ font-family: 'Roboto', sans-serif;
+}
+
+.navbar-brand>img {
+ padding: 0px;
+ height: 40px;
+ width: 140px;
+}
+.navbar {
+ height: 70px;
+}
+.navbar-nav {
+ margin-top: 10px;
+}
+
+.btn a {
+  text-decoration: none !important;
+}
+
+/*a:link, a:visited, a:hover, a:active,  {
+    text-decoration:none !important;
+}*/
+
+.ruby-link {
+  color: white;
+  text-decoration: none;
+}
+
+.btn {
+   padding: 14px 24px;
+   border: 0 none;
+   font-weight: 700;
+   letter-spacing: 1px;
+   text-transform: uppercase;
+}
+
+.btn-primary {
+   background: #0099cc;
+   color: #ffffff;
+}
+
+.post-image-container {
+  float:none;
+  display:inline-block;
+  vertical-align:middle;
+}
