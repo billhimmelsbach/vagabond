@@ -19,13 +19,13 @@
    font-family: 'Roboto', sans-serif;
  }
 
-a {
-  text-decoration: none;
+.btn a {
+  text-decoration: none !important;
 }
 
-a:link, a:visited, a:hover, a:active,  { 
-    text-decoration:none;
-}
+/*a:link, a:visited, a:hover, a:active,  {
+    text-decoration:none !important;
+}*/
 
 .ruby-link {
   color: white;
@@ -107,4 +107,15 @@ a:link, a:visited, a:hover, a:active,  {
 .btn-primary:active, .btn-primary.active {
    background: #007299;
    box-shadow: none;
+}
+
+.body {
+  background-color: #000000;
+  background-image: url("https://www.transparenttextures.com/patterns/cartographer.png");
+}
+
+.post-image-container {
+  float:none;
+  display:inline-block;
+  vertical-align:middle;
 }
