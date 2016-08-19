@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-
-  get 'posts/:id', to: "posts#show", as: 'post'
-
   root to: "users#splash"
 
   get "/users/new", to: "users#new", as: "new_user"
@@ -15,5 +12,8 @@ Rails.application.routes.draw do
   patch "/users/:id", to: "users#update"
 
   get "/cities/:id", to: "cities#show", as: "city"
-  
+
+  get "/posts/new", to: "posts#new", as: "new_post"
+  post "/cities/:id", to: "posts#create"
+  get "posts/:id", to: "posts#show", as: "post"
 end
