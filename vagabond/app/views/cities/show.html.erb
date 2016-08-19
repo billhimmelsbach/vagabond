@@ -3,3 +3,7 @@
 <div class="container">
   <img src="<%= @city.image %>" />
 </div>
+
+<% @city.posts.each do |post|  %>
+<p><%= post.title %></p>
+<% end %>
