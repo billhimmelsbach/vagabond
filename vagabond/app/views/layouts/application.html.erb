@@ -23,15 +23,23 @@
           <li><%= link_to "Log In", new_session_path %></li>
         <% end %>
         <br>
-        <%= flash_messages %>
-        <br>
       </ul>
     </div>
   </nav>
   <div class="jumbotron">
   </div>
 
-<%= yield %>
+  <div class = "col-xs-6 col-xs-offset-3">
+      <%= flash_messages %>
+  </div>
+  <div class= "row">
+    <!-- ************************ -->
+    <!-- May want to remove this containing div depending on styling group decisions: do we want a container on every page or site wide? -->
+    <!-- ************************ -->
+    <div class= "col-xs-10 col-xs-offset-1">
+      <%= yield %>
+    </div>
+  </div>
 
 </body>
 </html>
