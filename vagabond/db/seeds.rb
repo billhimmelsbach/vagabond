@@ -30,6 +30,7 @@ USERS = [
     first_name: "Kathleen",
     last_name: "Hanna",
     email: "khanna@test.com",
+    current_city: "San Francisco",
     password_digest: "$2a$10$Dnb1rMCPOFcQfSKDPdVXY.G.xkWyTus6liF3q5Q1.fB/AAIQgSZFu",
     image_url: "http://assets.rollingstone.com/assets/images/story/kathleen-hanna-moves-forward-with-the-julie-ruin-20130904/hanna-306-1378408387.jpg"
   }

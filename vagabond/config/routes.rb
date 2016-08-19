@@ -15,6 +15,6 @@ Rails.application.routes.draw do
 
   # get "/posts/new", to: "posts#new", as: "new_post"
   # post "/cities/:id", to: "posts#create"
-  # get "posts/:id", to: "posts#show", as: "post"
+  get "/posts/:id", to: "posts#show", as: "post"
   # get "/cities/:city_id/posts", to: "city#"
 end
