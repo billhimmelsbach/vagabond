@@ -35,7 +35,7 @@
     </div>
     <br>
   </div>
-<%= link_to "Delete", "/cities/#{@post.city_id}/posts/#{@post.id}" , method: :delete %>
+<%= link_to "Delete", "/cities/#{@post.city_id}/posts/#{@post.id}" , method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= link_to "Edit", edit_post_path, method: :get %>
 
 
