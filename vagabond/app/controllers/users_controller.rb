@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
 
   def splash
+    @cities = City.all
+
     render :splash
   end
 
