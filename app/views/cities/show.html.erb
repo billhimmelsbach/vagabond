@@ -1,12 +1,20 @@
 <h1><%= @city.name %></h1>
 
-<div class="container">
-  <img src="<%= @city.image %>" />
+<div class ="row">
+  <div class="card card-inverse col-xs-10 show-city-img" style="background-image: url('<%=@city.image %>');">
+
+    <div class="card-img-overlay">
+      <h1 class="card-title city-text"><%= "#{@city.name}" %></h1>
+      <div style="min-height:30vh">
+      </div>
+    </div>
+  </div>
 </div>
-<br>
+<div class ="row">
 
-<%= link_to "New post", "/cities/#{@city.id}/posts/new" %>
+  <%= link_to "New post", "/cities/#{@city.id}/posts/new" %>
 
-<% @city.posts.order("created_at desc").each do |post|  %>
-  <h4><%= link_to "#{post.title}", "/cities/#{post.city.id}/posts/#{post.id}" %></h4>
-<% end %>
+  <% @city.posts.order("created_at desc").each do |post|  %>
+    <h4><%= link_to "#{post.title}", "/cities/#{post.city.id}/posts/#{post.id}" %></h4>
+  <% end %>
+</div>
