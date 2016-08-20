@@ -1,19 +1,20 @@
 <div class="col-xs-3">
   <div class="row">
-    <div class="col-xs-10">
       <% if @post.user.image_url == nil%>
         <img src="http://i.imgur.com/ixpF82Y.png" class="img-responsive img-circle">
       <% else %>
-        <div class="product_img img-responsive img-circle"><%= link_to (image_tag (@post.user.image_url)) %></div>
+        <img src="<%= @post.user.image_url%>" class="product_img img-responsive img-circle">
       <% end %>
-    </div>
   </div>
   <br>
   <div class="row">
-    <h3><%=  @post.user.first_name %> <%=  @post.user.last_name %> </p>
+    <h3><%=  @post.user.first_name %> <%= @post.user.last_name %> </p>
     <h4>Date Joined: <%= @post.user.created_at.localtime.strftime("%B #{@post.user.created_at.day.ordinalize}, %Y") %> </p>
     <h4> <%=  @post.user.current_city %> </p>
     <br>
+    <div>
+      <%= button_to "Edit", edit_user_path(@post.user), method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg" %>
+    </div>
   </div>
 </div>
 
@@ -34,7 +35,7 @@
     </div>
     <br>
   </div>
-<%= link_to "Delete", :post, url: destroy_post_path, method: :delete %>
+<%= link_to "Delete", "/cities/#{@post.city_id}/posts/#{@post.id}" , method: :delete %>
 <%= link_to "Edit", edit_post_path, method: :get %>
 
 
