@@ -3,7 +3,10 @@
 <div class="container">
   <img src="<%= @city.image %>" />
 </div>
+<br>
+
+<%= link_to "New post", "/cities/#{@city.id}/posts/new" %>
 
 <% @city.posts.order("created_at desc").each do |post|  %>
-  <h4><%= link_to "#{post.title}", "/posts/#{post.id}" %></h4>
+  <h4><%= link_to "#{post.title}", "/cities/#{post.city.id}/posts/#{post.id}" %></h4>
 <% end %>

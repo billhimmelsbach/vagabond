@@ -20,7 +20,7 @@ POSTS = [
     title: "The best sandwich place in SF",
     content: "Ikes sandwiches are the best",
     image: "http://cdn.funcheap.com/wp-content/uploads/2011/11/ikes-sandwich.jpg",
-    user_id: 2,
+    user_id: 1,
     city_id: 1
   }
 ]
