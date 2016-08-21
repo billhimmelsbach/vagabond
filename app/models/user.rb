@@ -3,6 +3,7 @@ class User < ActiveRecord::Base
 
   has_many :posts
   has_many :cities, :through => :posts
+  
   validates :email, uniqueness: true
   validates :first_name, length: { in: 2..30}, presence: true
   validates :last_name, length: { in: 2..30}, presence: true
