@@ -1,9 +1,6 @@
 class PostsController < ApplicationController
   include AuthHelper
 
-  def index
-  end
-
   def show
     @post = Post.find(params[:post_id])
   end
@@ -47,4 +44,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :content)
     end
+    
 end
