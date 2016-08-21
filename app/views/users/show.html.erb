@@ -65,19 +65,32 @@
             <div class="pull-right">
               <div class = "button-row">
                 <%= link_to "Edit Post", "/cities/#{post.city_id}/posts/#{post.id}/edit", method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg inline" %>
-                <%= link_to "Delete Post", "/cities/#{post.city_id}/posts/#{post.id}" , method: :delete, :class=>"ruby-link btn btn-danger inline btn-primary btn-lg inline", data: { confirm: 'Are you sure?' } %>
-                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  Button with data-target
+                <button class="ruby-link btn btn-danger inline btn-primary btn-lg inline" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Delete
                 </button>
               </div>
             </div>
-            <div class = "row">
-              <div class="collapse" id="collapseExample">
-                <div class="well">
-                  <h1> TEST! </h1>
+          </div>
+          <div class = "row">
+            <div class="collapse" id="collapseExample">
+              <div class="well">
+                <h3 class="inline"> Are you sure you want to delete your post? </h3>
+                <div class = "row">
+                  <div class="col-xs-3">
+                  </div>
+                  <div class= "col-xs-6">
+                    <br>
+                    <button class="ruby-link btn btn-danger btn-primary btn-lg inline" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      <%= link_to "Delete Post", "/cities/#{post.city_id}/posts/#{post.id}" , method: :delete %>
+                    </button>
+                    <button class = "btn btn-success inline btn-primary btn-lg" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      Cancel
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
           </div>
         <% end %>
       </div>

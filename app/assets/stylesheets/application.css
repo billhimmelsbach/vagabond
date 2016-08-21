@@ -50,6 +50,11 @@ h1, h2, h3, h4 {
   text-decoration: none;
 }
 
+.ruby-link a {
+  color: white;
+  text-decoration: none;
+}
+
 .btn {
    padding: 14px 24px;
    border: 0 none;
@@ -69,7 +74,7 @@ h1, h2, h3, h4 {
 }
 
 .button-row {
-  float:left; 
+  float:left;
   margin-right:10px;
 }
 
