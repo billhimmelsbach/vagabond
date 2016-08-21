@@ -1,4 +1,12 @@
-Sign Up
+
+<div class="jumbotron">
+  <div class = "col-xs-6 col-xs-offset-3">
+      <%= flash_messages %>
+  </div>
+</div>
+<h2 style="text-align:center"><strong>Edit</strong></h2>
+
+<div class="register">
 
 <%= form_for @user, html: { multipart: true } do |f| %>
   <div class="form-group">

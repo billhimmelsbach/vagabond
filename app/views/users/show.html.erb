@@ -1,4 +1,10 @@
-<div class="col-xs-3">
+<div class="jumbotron">
+  <div class = "col-xs-6 col-xs-offset-3">
+      <%= flash_messages %>
+  </div>
+</div>
+<div class= "col-xs-10 col-xs-offset-1">
+  <div class="col-xs-3">
   <div class="row">
     <img src="<%= @user.image_url%>" class="product_img img-responsive img-circle">
   </div>
@@ -97,4 +103,5 @@
       <br>
     </div>
   <% end %>
+</div>
 </div>
