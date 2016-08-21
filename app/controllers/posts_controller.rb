@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  include PostsHelper
+
   def index
   end
 
