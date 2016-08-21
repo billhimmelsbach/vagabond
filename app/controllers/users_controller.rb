@@ -22,7 +22,7 @@ class UsersController < ApplicationController
           redirect_to @user
         else
 
-        flash[:notice] = "Sorry darling, but there are issues with your attempted signup. #{@user.errors.full_messages.join(', ')}. Try again :P"
+        flash[:notice] = "Sorry darling, but there are issues with your attempted signup. Issues are as follows. #{@user.errors.full_messages.join(', ')}. So basically, umm, yeah, try again :P"
         redirect_to new_user_path
         end
 
