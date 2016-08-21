@@ -9,6 +9,7 @@ class CityPostsController < ApplicationController
     @city = City.find(params[:city_id])
     post = Post.create(post_params)
     @city.posts.push(post)
+    flash[:success] = "Successfully posted in #{@city.name}"
     redirect_to city_path(@city)
   end
 
