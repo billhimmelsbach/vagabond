@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  include PostsHelper
+  include ApplicationHelper
 
   def index
   end
@@ -10,7 +10,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:post_id])
-    if check_user
+    if authenticate_user_through_post
       render :edit
     else
       auth_fail
@@ -19,7 +19,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:post_id])
-    if check_user
+    if authenticate_user_through_post
       if @post.update(post_params)
         redirect_to post_path
       else
@@ -32,7 +32,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:post_id])
-    if check_user
+    if authenticate_user_through_post
       @city = City.find(params[:city_id])
       @post.destroy
       redirect_to city_path(@city)

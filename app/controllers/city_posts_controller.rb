@@ -1,4 +1,5 @@
 class CityPostsController < ApplicationController
+  include SessionsHelper
 
   def new
     @post = Post.new
