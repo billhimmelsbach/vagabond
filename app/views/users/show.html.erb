@@ -66,9 +66,16 @@
               <div class = "button-row">
                 <%= link_to "Edit Post", "/cities/#{post.city_id}/posts/#{post.id}/edit", method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg inline" %>
                 <%= link_to "Delete Post", "/cities/#{post.city_id}/posts/#{post.id}" , method: :delete, :class=>"ruby-link btn btn-danger inline btn-primary btn-lg inline", data: { confirm: 'Are you sure?' } %>
-                <%= link_to 'Test', '#', :class => "btn btn-default", "data-toggle" => "collapse", "data-target" => "delete-confirmation" %>
+                <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                  Button with data-target
+                </button>
               </div>
-              <div id="delete-confirmation" class="collapse">
+            </div>
+            <div class = "row">
+              <div class="collapse" id="collapseExample">
+                <div class="well">
+                  <h1> TEST! </h1>
+                </div>
               </div>
             </div>
           </div>
