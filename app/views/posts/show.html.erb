@@ -1,10 +1,6 @@
 <div class="col-xs-3">
   <div class="row">
-      <% if @post.user.image_url == nil%>
-        <img src="http://i.imgur.com/ixpF82Y.png" class="img-responsive img-circle">
-      <% else %>
-        <img src="<%= @post.user.image_url%>" class="product_img img-responsive img-circle">
-      <% end %>
+    <img src="<%= @post.user.image_url%>" class="product_img img-responsive img-circle">
   </div>
   <br>
   <div class="row">
