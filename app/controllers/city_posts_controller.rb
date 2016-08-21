@@ -10,12 +10,14 @@ class CityPostsController < ApplicationController
   def create
     @city = City.find(params[:city_id])
     @post = Post.new(post_params)
-    @post.user_id = current_user
+    @post.user_id = session[:user_id]
+
 
     if @post.save
     @city.posts.push(@post)
-    flash[:success] = "Successfully posted your post titled #{@post.title}in #{@city.name}"
+    flash[:success] = "Awesome! Your post titled \"#{@post.title}\" was successfully submitted to the #{@city.name} city page"
     redirect_to city_path(@city)
+
     else
       flash[:notice] = "Sorry bud, but we can't accept your post. And this is why. #{@post.errors.full_messages.join(', ')}. No big deal. Just try a new post, keeping this in mind. ;)"
       redirect_to "/cities/#{@city.id}/posts/new"
