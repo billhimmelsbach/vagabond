@@ -2,16 +2,16 @@
 POSTS = [
   {
     title: "If You're Visiting San Francisco, You Have To Get THIS BURRITO.",
-    content: "El Faralito has the best burritos in SF, HANDS DOWN. Sure you have to wait in a long line, but it's worth the wait. Bonus: they are open crazy late for those times when all you need is a burrito after a great rock concert.",
+    content: "El Faralito has the best burritos in SF, HANDS DOWN. Bonus: they are open crazy late for those times when all you need is a burrito after a great rock concert.",
     image: "http://winstonwanders.com/wp-content/uploads/2014/11/DSC_5524_edit-700x393.jpg",
-    user_id: 1,
+    user_id: 2,
     city_id: 1
   },
   {
     title: "There Are a Thousand Ice Cream Shops in SF... but Only One Bi-Rite!!!",
     content: "Bi-rite ice cream will change the way you think about Ice Cream. If you're traveling through SF, take a minute to experience ice cream the way ice cream was always meant to be: simple and delicious.",
     image: "https://mynikoneatsfood.files.wordpress.com/2011/02/dsc_7337.jpg",
-    user_id: 1,
+    user_id: 3,
     city_id: 1
   },
   {
@@ -32,22 +32,22 @@ USERS = [
     password_digest: "$2a$10$Dnb1rMCPOFcQfSKDPdVXY.G.xkWyTus6liF3q5Q1.fB/AAIQgSZFu",
     image_url: "http://assets.rollingstone.com/assets/images/story/kathleen-hanna-moves-forward-with-the-julie-ruin-20130904/hanna-306-1378408387.jpg"
   },
-  # {
-  #   first_name: "Frank",
-  #   last_name: "Ocean",
-  #   email: "focean@test.com",
-  #   current_city: "New Orleans",
-  #   password_digest:""
-  #   image_url: "http://cdn.pitchfork.com/tracks/17293/homepage_large.8a0c1ce3.jpg"
-  # },
-  # {
-  #   first_name: "Ada",
-  #   last_name: "Lovelace",
-  #   email:"alovelace@test.com",
-  #   current_city: "London",
-  #   password_digest:""
-  #   image_url: "http://i.imgur.com/ixpF82Y.png"
-  # }
+  {
+    first_name: "Frank",
+    last_name: "Ocean",
+    email: "focean@test.com",
+    current_city: "New Orleans",
+    password_digest: "$2a$10$S5dx9iu1Sx.SPP7J/itQ7uPwW4j8mC50e0xsP/tRjCrsrlI0uwFxC",
+    image_url: "http://cdn.pitchfork.com/tracks/17293/homepage_large.8a0c1ce3.jpg"
+  },
+  {
+    first_name: "Ada",
+    last_name: "Lovelace",
+    email: "alovelace@test.com",
+    current_city: "London",
+    password_digest: "$2a$10$0d8Wig5YbVC7wlOfz61nVeg81i19VSN9vsbVjhIOSUQHVMtgRGDCq",
+    image_url: "http://i.imgur.com/ixpF82Y.png"
+  }
 ]
 
 CITIES = [
