@@ -8,7 +8,12 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:post_id])
-    render :edit
+    if check_user
+      render :edit
+    else
+      flash[:error] = "You cannot edit other people's posts!"
+      redirect_to post_path
+    end
   end
 
   def update
@@ -28,7 +33,12 @@ class PostsController < ApplicationController
   end
 
   private
+
     def post_params
       params.require(:post).permit(:title, :content)
+    end
+
+    def check_user
+      current_user != nil && current_user.id = @post.user.id
     end
 end
