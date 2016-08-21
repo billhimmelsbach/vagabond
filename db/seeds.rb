@@ -1,4 +1,3 @@
-Post.delete_all
 
 POSTS = [
   {
@@ -14,12 +13,14 @@ POSTS = [
     image: "https://mynikoneatsfood.files.wordpress.com/2011/02/dsc_7337.jpg",
     user_id: 1,
     city_id: 1
-
   },
   {
-    title: "Two Words: Pug. Woodstock."
-    content: "On the first Sunday of every month at Alta Plaza Park, something magical happens. Pug Woodstock. Everyone in the area brings their pugs in"
-
+    title: "Two Words: Pug. Woodstock.",
+    content: "On the first Sunday of every month at Alta Plaza Park, something magical happens. Pug Woodstock. Everyone in the area brings their pugs in for a giant sea of pugs. A pug sea. HOW CAN YOU RESIST?",
+    image: "http://s3-media1.fl.yelpcdn.com/bphoto/CKabJysnNNF33cKjaAWKtQ/348s.jpg",
+    user_id: 1,
+    city_id: 1
+  }
 ]
 
 USERS = [
@@ -30,13 +31,37 @@ USERS = [
     current_city: "San Francisco",
     password_digest: "$2a$10$Dnb1rMCPOFcQfSKDPdVXY.G.xkWyTus6liF3q5Q1.fB/AAIQgSZFu",
     image_url: "http://assets.rollingstone.com/assets/images/story/kathleen-hanna-moves-forward-with-the-julie-ruin-20130904/hanna-306-1378408387.jpg"
-  }
+  },
+  # {
+  #   first_name: "Frank",
+  #   last_name: "Ocean",
+  #   email: "focean@test.com",
+  #   current_city: "New Orleans",
+  #   password_digest:""
+  #   image_url: "http://cdn.pitchfork.com/tracks/17293/homepage_large.8a0c1ce3.jpg"
+  # },
+  # {
+  #   first_name: "Ada",
+  #   last_name: "Lovelace",
+  #   email:"alovelace@test.com",
+  #   current_city: "London",
+  #   password_digest:""
+  #   image_url: "http://i.imgur.com/ixpF82Y.png"
+  # }
 ]
 
-CITY = [
+CITIES = [
   {
     name: "San Francisco",
     image: "http://cats2010.com/wp-content/uploads/2014/09/Untitled_Panorama4-2.jpg "
+  },
+  {
+    name: "London",
+    image: "https://media.licdn.com/mpr/mpr/p/4/005/06e/30b/3b8b905.jpg"
+  },
+  {
+    name: "Gibraltar",
+    image: "http://www.visitgibraltar.gi/images/homepage_slider/df1aw_slide2.jpeg"
   },
   {
     name: "Boston",
@@ -54,4 +79,4 @@ CITY = [
 
 p Post.create(POSTS)
 p User.create(USERS)
-p City.create(CITY)
+p City.create(CITIES)
