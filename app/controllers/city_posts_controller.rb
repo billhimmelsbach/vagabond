@@ -1,5 +1,6 @@
 class CityPostsController < ApplicationController
   include SessionsHelper
+  include AuthHelper
 
   def new
     @post = Post.new
@@ -7,6 +8,7 @@ class CityPostsController < ApplicationController
   end
 
   def create
+    # logged in check needs to go here
     @city = City.find(params[:city_id])
     post = Post.create(post_params)
     @city.posts.push(post)

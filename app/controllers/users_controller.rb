@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include AuthHelper
 
   def splash
     @cities = City.all
@@ -25,6 +26,9 @@ class UsersController < ApplicationController
 
   def edit
     @user = User.find_by_id(params[:id])
+    if !authenticate_user_through_user
+      redirect_to @user
+    end
   end
 
   def update

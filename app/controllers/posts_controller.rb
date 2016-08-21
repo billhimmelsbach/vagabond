@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  include AuthenticationHelper
+  include AuthHelper
 
   def index
   end
@@ -13,7 +13,7 @@ class PostsController < ApplicationController
     if authenticate_user_through_post
       render :edit
     else
-      auth_fail
+      auth_fail("edit other people's posts!", post_path)
     end
   end
 
@@ -26,7 +26,7 @@ class PostsController < ApplicationController
         render :edit
       end
     else
-      auth_fail
+      auth_fail("update other people's posts!", post_path)
     end
   end
 
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
       @post.destroy
       redirect_to city_path(@city)
     else
-      auth_fail
+      auth_fail("delete other people's posts", post_path)
     end
   end
 

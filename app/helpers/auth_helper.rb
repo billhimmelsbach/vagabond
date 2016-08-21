@@ -1,4 +1,4 @@
-module AuthenticationHelper
+module AuthHelper
   def authenticate_user_through_post
     current_user != nil && current_user.id = @post.user.id
   end
@@ -11,8 +11,8 @@ module AuthenticationHelper
     current_user != nil && current_user.id = @city.user.id
   end
 
-  def auth_fail
-    flash[:error] = "You cannot edit other people's posts!"
-    redirect_to post_path
+  def auth_fail(reason_for_failure, redirect_path)
+    flash[:error] = "You can't " + reason_for_failure
+    redirect_to redirect_path
   end
 end
