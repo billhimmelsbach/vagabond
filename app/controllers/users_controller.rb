@@ -13,9 +13,19 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.create(user_params)
-    login(@user)
-    redirect_to @user
+
+        @user = User.new(user_params)
+
+        if @user.save
+          login(@user)
+          flash[:notice] = "Congratulations, you have been signed up! A registration e-mail has been delivered to your email address. We hope you enjoy the site!"
+          redirect_to @user
+        else
+
+        flash[:notice] = "Sorry darling, but there are issues with your attempted signup. Issues are as follows. #{@user.errors.full_messages.join(', ')}. So basically, umm, yeah, try again :P"
+        redirect_to new_user_path
+        end
+
   end
 
   def show
