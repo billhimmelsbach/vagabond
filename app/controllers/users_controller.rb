@@ -12,7 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    
+
         @user = User.new(user_params)
 
         if @user.save
@@ -21,7 +21,7 @@ class UsersController < ApplicationController
           redirect_to @user
         else
 
-        flash[:notice] = "Sorry darling, but your #{@user.errors.full_messages.join(', ')}. Try a different e-mail :P"
+        flash[:notice] = "Sorry darling, but there are issues with your attempted signup. #{@user.errors.full_messages.join(', ')}. Try again :P"
         redirect_to new_user_path
         end
 
