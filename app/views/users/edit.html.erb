@@ -1,31 +1,30 @@
-
 <div class="jumbotron">
   <div class = "col-xs-6 col-xs-offset-3">
       <%= flash_messages %>
   </div>
 </div>
+
 <h2 style="text-align:center"><strong>Edit</strong></h2>
-
 <div class="register">
-
-<%= form_for @user, html: { multipart: true } do |f| %>
-  <div class="form-group">
-    <%= f.file_field :image %>
-  </div>
-  <div>
-    <%= f.text_field :first_name, placeholder: "First Name" %>
-  </div>
-  <div>
-    <%= f.text_field :last_name, placeholder: "Last Name" %>
-  </div>
-  <div>
-    <%= f.text_field :current_city, placeholder: "Current City" %>
-  </div>
-  <div>
-    <%= f.text_field :email, placeholder: "Email" %>
-  </div>
-  <div>
-    <%= f.password_field :password, placeholder: "Password" %>
-  </div>
-  <%= f.submit "Edit" %>
-<% end %>
+  <%= form_for @user, html: { multipart: true } do |f| %>
+    <div class="form-group">
+      <%= f.file_field :image %>
+    </div>
+    <div>
+      <%= f.text_field :first_name, placeholder: "First Name" %>
+    </div>
+    <div>
+      <%= f.text_field :last_name, placeholder: "Last Name" %>
+    </div>
+    <div>
+      <%= f.text_field :current_city, placeholder: "Current City" %>
+    </div>
+    <div>
+      <%= f.text_field :email, placeholder: "Email" %>
+    </div>
+    <div>
+      <%= f.password_field :password, placeholder: "Password" %>
+    </div>
+    <%= f.submit "Edit" %>
+  <% end %>
+</div>

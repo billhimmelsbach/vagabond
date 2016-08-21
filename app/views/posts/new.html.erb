@@ -1,13 +1,11 @@
-
 <div class="jumbotron">
   <div class = "col-xs-6 col-xs-offset-3">
       <%= flash_messages %>
   </div>
 </div>
+
 <h2 style="text-align:center"><strong>New Post</strong></h2>
-
 <div class="register">
-
   <%= form_for :post, url: new_city_post_path  do |f| %>
     <div class="register-input">
       <%= f.text_field :title, placeholder: "Title" %>
@@ -20,5 +18,4 @@
     </div>
     <%= f.submit "Post" %>
   <% end %>
-
 </div>
