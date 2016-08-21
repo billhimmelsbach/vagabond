@@ -1,8 +1,12 @@
 class SessionsController < ApplicationController
 
   def new
-    @user = User.new
-    render :new
+    if !logged_in
+      @user = User.new
+      render :new
+    else
+      auth_fail("login when you're already logged in!", root_path)
+    end
   end
 
   def create
