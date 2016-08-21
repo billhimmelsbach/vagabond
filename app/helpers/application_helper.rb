@@ -1,6 +1,6 @@
 module ApplicationHelper
   def bootstrap_class_for flash_type
-      { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }[flash_type.to_sym] || flash_type.to_s
+    { success: "alert-success", error: "alert-danger", alert: "alert-warning", notice: "alert-info" }[flash_type.to_sym] || flash_type.to_s
   end
 
   def flash_messages(opts = {})
@@ -16,20 +16,9 @@ module ApplicationHelper
     nil
   end
 
-  # def authenticate_user_through_post
-  #   current_user != nil && current_user.id == @post.user.id
-  # end
-  #
-  # def authenticate_user_through_user
-  #   current_user != nil && current_user.id == @user.id
-  # end
-  #
-  # def authenticate_user_through_city
-  #   current_user != nil && current_user.id == @city.user.id
-  # end
-
   def auth_fail
     flash[:error] = "You cannot edit other people's posts!"
     redirect_to post_path
   end
+  
 end
