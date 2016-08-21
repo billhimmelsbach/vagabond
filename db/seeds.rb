@@ -2,27 +2,24 @@ Post.delete_all
 
 POSTS = [
   {
-    title: "The best burrito in SF",
-    content: "El Faralito has the best burritos in SF. They're open late and they taste wonderful.",
+    title: "If You're Visiting San Francisco, You Have To Get THIS BURRITO.",
+    content: "El Faralito has the best burritos in SF, HANDS DOWN. Sure you have to wait in a long line, but it's worth the wait. Bonus: they are open crazy late for those times when all you need is a burrito after a great rock concert.",
     image: "http://winstonwanders.com/wp-content/uploads/2014/11/DSC_5524_edit-700x393.jpg",
     user_id: 1,
     city_id: 1
   },
   {
-    title: "The best ice cream in SF",
-    content: "Bi-Rite ice cream is the best",
+    title: "There Are a Thousand Ice Cream Shops in SF... but Only One Bi-Rite!!!",
+    content: "Bi-rite ice cream will change the way you think about Ice Cream. If you're traveling through SF, take a minute to experience ice cream the way ice cream was always meant to be: simple and delicious.",
     image: "https://mynikoneatsfood.files.wordpress.com/2011/02/dsc_7337.jpg",
     user_id: 1,
     city_id: 1
 
   },
   {
-    title: "The best sandwich place in SF",
-    content: "Ikes sandwiches are the best",
-    image: "http://cdn.funcheap.com/wp-content/uploads/2011/11/ikes-sandwich.jpg",
-    user_id: 1,
-    city_id: 1
-  }
+    title: "Two Words: Pug. Woodstock."
+    content: "On the first Sunday of every month at Alta Plaza Park, something magical happens. Pug Woodstock. Everyone in the area brings their pugs in"
+
 ]
 
 USERS = [
