@@ -1,4 +1,6 @@
 class PostsController < ApplicationController
+  include AuthHelper
+
   def index
   end
 
@@ -8,26 +10,39 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.find(params[:post_id])
-    render :edit
+    if auth_through_post
+      render :edit
+    else
+      auth_fail("edit other people's posts!", post_path)
+    end
   end
 
   def update
     @post = Post.find(params[:post_id])
-    if @post.update(post_params)
-      redirect_to post_path
+    if auth_through_post
+      if @post.update(post_params)
+        redirect_to post_path
+      else
+        render :edit
+      end
     else
-      render :edit
+      auth_fail("update other people's posts!", post_path)
     end
   end
 
   def destroy
-    @city = City.find(params[:city_id])
     @post = Post.find(params[:post_id])
-    @post.destroy
-    redirect_to city_path(@city)
+    if auth_through_post
+      @city = City.find(params[:city_id])
+      @post.destroy
+      redirect_to city_path(@city)
+    else
+      auth_fail("delete other people's posts", post_path)
+    end
   end
 
   private
+
     def post_params
       params.require(:post).permit(:title, :content)
     end

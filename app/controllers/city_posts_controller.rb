@@ -1,4 +1,6 @@
 class CityPostsController < ApplicationController
+  include SessionsHelper
+  include AuthHelper
 
   def new
     @post = Post.new
@@ -6,11 +8,15 @@ class CityPostsController < ApplicationController
   end
 
   def create
-    @city = City.find(params[:city_id])
-    post = Post.create(post_params)
-    @city.posts.push(post)
-    flash[:success] = "Successfully posted in #{@city.name}"
-    redirect_to city_path(@city)
+    if logged_in?
+      @city = City.find(params[:city_id])
+      post = Post.create(post_params)
+      @city.posts.push(post)
+      flash[:success] = "Successfully posted in #{@city.name}"
+      redirect_to city_path(@city)
+    else
+      auth_fail("make a new post unless you're logged in!", @city)
+    end
   end
 
   private

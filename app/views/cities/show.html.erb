@@ -5,7 +5,9 @@
       <h1 class="card-title city-text"><%= "#{@city.name}" %></h1>
       <div style="min-height:30vh">
       </div>
-      <%= button_to "New post", "/cities/#{@city.id}/posts/new", method: :get, :class=>"ruby-link btn btn-success btn-primary btn-lg" %>
+      <% if current_user != nil %>
+        <%= button_to "New post", "/cities/#{@city.id}/posts/new", method: :get, :class=>"ruby-link btn btn-success btn-primary btn-lg" %>
+      <% end %>
       <br>
     </div>
   </div>

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  include AuthHelper
 
   def splash
     @cities = City.all
@@ -7,36 +8,47 @@ class UsersController < ApplicationController
   end
 
   def new
-    @user = User.new
-    render :new
+    if !logged_in
+      @user = User.new
+      render :new
+    else
+      auth_fail("create a new account when you're still logged in!", root_path)
+    end
   end
 
   def create
-    @user = User.create(user_params)
-    login(@user)
-    redirect_to @user
+    if !logged_in?
+      @user = User.create(user_params)
+      login(@user)
+      redirect_to @user
+    else
+      auth_fail("create a new account when you're still logged in!", root_path)
+    end
   end
 
   def show
     @user = User.find_by_id(params[:id])
-    if @user.id == current_user.id
-      @posts = Post.where(user_id: params[:id])
-      render :show
-    else
-      redirect_to user_path(current_user)
-    end
+    @posts = Post.where(user_id: params[:id])
+    render :show
   end
 
   def edit
     @user = User.find_by_id(params[:id])
+    if !auth_through_user
+      auth_fail("edit other people's user information!", @user)
+    end
   end
 
   def update
     @user = User.find_by_id(params[:id])
-    if @user.update(user_params)
-      redirect_to @user
+    if auth_through_user
+      if @user.update(user_params)
+        redirect_to @user
+      else
+        render :edit
+      end
     else
-      render :edit
+      auth_fail("update other people's user information!", @user)
     end
   end
 
