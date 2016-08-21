@@ -38,7 +38,7 @@
         <% elsif @user.cities.distinct.count < 1 || nil %>
           <p> Wow, You've contributed <u>0</u> posts so far!</p>
           <p> What are you waiting for? To get started, consider posting about your favorite restaurant in a city you adore. </p>
-          <p>For us, it's <li> <u><%=link_to "San Francisco","/cities/1" %></u>! </li>
+          <p>For us, it's <u><%=link_to "San Francisco","/cities/1" %></u>! </li>
           </p>
         <% end %>
     </ul>
