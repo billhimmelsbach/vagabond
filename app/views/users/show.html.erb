@@ -8,9 +8,9 @@
   </div>
   <br>
   <div class="row">
-    <h3><%=  @user.first_name %> <%= @user.last_name %> </p>
-    <h4>Date Joined: <%= @user.created_at.localtime.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %> </p>
-    <h4> <%=  @user.current_city %> </p>
+    <h3><%=  @user.first_name %> <%= @user.last_name %> </h3>
+    <h4>Date Joined: <%= @user.created_at.localtime.strftime("%B #{@user.created_at.day.ordinalize}, %Y") %> </h4>
+    <h4> <%=  @user.current_city %> </h4>
         <% if @user.cities.distinct.count == 1 %>
               <p> You've contributed to <%= @user.cities.distinct.count %> city</p>
               <ul>

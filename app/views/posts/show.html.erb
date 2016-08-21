@@ -1,3 +1,18 @@
+<div class ="row">
+  <div class="card card-inverse col-xs-12 show-city-img" style="background-image: url('<%=@post.city.image %>');">
+
+    <div class="card-img-overlay">
+      <h1 class="card-title city-text"><%= "#{@post.city.name}" %></h1>
+      <div style="min-height:30vh">
+      </div>
+      <% if current_user != nil %>
+      <%= button_to "Back", "/cities/#{@post.city_id}",method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg inline" %>
+      <% end %>
+      <br>
+    </div>
+  </div>
+</div>
+<br>
 <div class="col-xs-3">
   <div class="row">
       <% if @post.user.image_url == nil%>
@@ -8,9 +23,9 @@
   </div>
   <br>
   <div class="row">
-    <h3><%=  @post.user.first_name %> <%= @post.user.last_name %> </p>
-    <h4>Date Joined: <%= @post.user.created_at.localtime.strftime("%B #{@post.user.created_at.day.ordinalize}, %Y") %> </p>
-    <h4> <%=  @post.user.current_city %> </p>
+    <h3> <%= link_to "#{@post.user.first_name} #{@post.user.last_name}", "/users/#{@post.user_id}" %></h3>
+    <h4>Date Joined: <%= @post.user.created_at.localtime.strftime("%B #{@post.user.created_at.day.ordinalize}, %Y") %> </h4>
+    <h4> <%=  @post.user.current_city %> </h4>
     <br>
     <div>
       <% if current_user != nil && current_user.id == @post.user.id %>
@@ -20,8 +35,10 @@
   </div>
 </div>
 
+
 <div class="col-xs-9">
   <div class="panel panel-default">
+
     <div class="panel-heading">
        <h2> <%= @post.title %> </h2>
     </div>
