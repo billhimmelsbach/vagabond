@@ -8,22 +8,14 @@ class UsersController < ApplicationController
   end
 
   def new
-    if !logged_in
-      @user = User.new
-      render :new
-    else
-      auth_fail("create a new account when you're still logged in!", root_path)
-    end
+    @user = User.new
+    render :new
   end
 
   def create
-    if !logged_in?
-      @user = User.create(user_params)
-      login(@user)
-      redirect_to @user
-    else
-      auth_fail("create a new account when you're still logged in!", root_path)
-    end
+    @user = User.create(user_params)
+    login(@user)
+    redirect_to @user
   end
 
   def show
