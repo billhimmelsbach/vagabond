@@ -13,8 +13,7 @@
   <nav class="navbar navbar-default navbar-fixed-top">
     <div class="container">
       <div class="navbar-header">
-        <a href="/" class="navbar-brand"><img src="http://i.imgur.com/t2eYHwW.png">
-        </a>
+        <a href="/" class="navbar-brand"><img src="http://i.imgur.com/t2eYHwW.png"></a>
       </div>
       <ul class="nav navbar-nav navbar-right">
         <% if current_user %>
@@ -28,20 +27,14 @@
       </ul>
     </div>
   </nav>
-  <div class="jumbotron">
-    <div class = "col-xs-6 col-xs-offset-3">
-        <%= flash_messages %>
-    </div>
-  </div>
-
 
   <div class= "row">
     <!-- ************************ -->
     <!-- May want to remove this containing div depending on styling group decisions: do we want a container on every page or site wide? -->
     <!-- ************************ -->
-    <div class= "col-xs-10 col-xs-offset-1">
+    <!-- <div class= "col-xs-10 col-xs-offset-1"> -->
       <%= yield %>
-    </div>
+    <!-- </div> -->
   </div>
 
 </body>
