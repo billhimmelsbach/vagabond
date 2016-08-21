@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  include ApplicationHelper
+  include AuthenticationHelper
 
   def index
   end
