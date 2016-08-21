@@ -27,7 +27,7 @@ class UsersController < ApplicationController
   def edit
     @user = User.find_by_id(params[:id])
     if !auth_through_user
-      redirect_to @user
+      auth_fail("edit other people's user information!", @user)
     end
   end
 
