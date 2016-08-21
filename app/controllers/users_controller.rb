@@ -12,10 +12,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    # user = User.create(user_params)
-        #
-        # p user.errors.messages
-        # render plain: User.create(user_params).errors.full_messages.inspect
+    
         @user = User.new(user_params)
 
         if @user.save
@@ -27,24 +24,7 @@ class UsersController < ApplicationController
         flash[:notice] = "Sorry darling, but your #{@user.errors.full_messages.join(', ')}. Try a different e-mail :P"
         redirect_to new_user_path
         end
-        # render plain: user.errors.full_messages.join(', ')
 
-        # if user.save
-        #   flash[:notice] =  "yo"
-        #   # flash[:notice] = "Sorry darling, but your desired email has already been claimed. Please choose a different one :P"
-        #   redirect_to root_path
-        # else
-        #   flash[:notice] = user.errors.full_messages
-        #   redirect_to root_path
-        # end
-      # if @user
-        # @user =  User.create(user_params)
-        #   login(@user)
-        #   flash[:notice] = "Successfully signed up!"
-        #   redirect_to root_path
-      # else
-      #   flash[:error] = @user.errors.full_messages
-      # end
   end
 
   def show
