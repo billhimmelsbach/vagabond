@@ -16,41 +16,32 @@
  */
 
 body {
- background-color: #ffffff ;
- background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
- padding-top: 60px;
+  background-color: #ffffff ;
+  background-image: url("https://www.transparenttextures.com/patterns/45-degree-fabric-light.png");
+  padding-top: 60px;
 }
 
 h1, h2, h3, h4 {
- font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', sans-serif;
 }
 
 .navbar-brand>img {
- padding: 0px;
- height: 40px;
- width: 140px;
+   padding: 0px;
+   height: 40px;
+   width: 140px;
 }
 .navbar {
- height: 70px;
+  height: 70px;
 }
 .navbar-nav {
- margin-top: 10px;
+  margin-top: 10px;
 }
 
 .btn a {
   text-decoration: none !important;
 }
 
-/*a:link, a:visited, a:hover, a:active,  {
-    text-decoration:none !important;
-}*/
-
 .ruby-link {
-  color: white;
-  text-decoration: none;
-}
-
-.ruby-link a {
   color: white;
   text-decoration: none;
 }
