@@ -13,7 +13,7 @@
     <h4> <%=  @user.current_city %> </p>
     <br>
     <div>
-      <% if current_user != nil && current_user.id = @post.user.id %>
+      <% if current_user != nil && current_user.id = @user.id %>
         <%= button_to "Edit Your Profile", edit_user_path(@user), method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg" %>
       <% end %>
     </div>

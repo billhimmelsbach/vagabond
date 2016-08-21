@@ -11,34 +11,37 @@ class PostsController < ApplicationController
     if check_user
       render :edit
     else
-      flash[:error] = "You cannot edit other people's posts!"
-      redirect_to post_path
+      auth_fail
     end
   end
 
   def update
     @post = Post.find(params[:post_id])
-    if @post.update(post_params)
-      redirect_to post_path
+    if check_user
+      if @post.update(post_params)
+        redirect_to post_path
+      else
+        render :edit
+      end
     else
-      render :edit
+      auth_fail
     end
   end
 
   def destroy
-    @city = City.find(params[:city_id])
     @post = Post.find(params[:post_id])
-    @post.destroy
-    redirect_to city_path(@city)
+    if check_user
+      @city = City.find(params[:city_id])
+      @post.destroy
+      redirect_to city_path(@city)
+    else
+      auth_fail
+    end
   end
 
   private
 
     def post_params
       params.require(:post).permit(:title, :content)
-    end
-
-    def check_user
-      current_user != nil && current_user.id = @post.user.id
     end
 end

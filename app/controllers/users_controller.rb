@@ -19,12 +19,8 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find_by_id(params[:id])
-    if @user.id == current_user.id
-      @posts = Post.where(user_id: params[:id])
-      render :show
-    else
-      redirect_to user_path(current_user)
-    end
+    @posts = Post.where(user_id: params[:id])
+    render :show
   end
 
   def edit
