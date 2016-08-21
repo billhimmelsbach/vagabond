@@ -4,12 +4,18 @@
     <div class="card-img-overlay">
       <h1 class="card-title city-text"><%= "#{@city.name}" %></h1>
       <div style="min-height:30vh">
-      </div>
-      <% if current_user != nil %>
+        <% if current_user %>
         <%= button_to "New post", "/cities/#{@city.id}/posts/new", method: :get, :class=>"ruby-link btn btn-success btn-primary btn-lg" %>
-      <% end %>
-      <br>
+        <% else %>
+        <h2>Want to add new post?</h2><br>
+          <%= link_to "Sign up", new_user_path, :class=>"ruby-link btn btn-success btn-primary btn-lg inline" %>
+          OR
+          <%= link_to "Log In", new_session_path, :class=>"ruby-link btn btn-success btn-primary btn-lg inline" %>
+        <% end %>
+      </div>
     </div>
+    <%= button_to "Back", root_path,method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg inline" %>
+    <br>
   </div>
 </div>
 <br>
