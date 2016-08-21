@@ -5,7 +5,6 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
 
   def not_found
-    p "NOT FOUND"
 	  render :not_found
   end
 
