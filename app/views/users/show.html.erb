@@ -48,7 +48,7 @@
     </ul>
     <br>
     <div>
-      <% if current_user != nil && current_user.id = @user.id %>
+      <% if current_user != nil && current_user.id == @user.id %>
         <%= button_to "Edit Your Profile", edit_user_path(@user), method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg" %>
       <% end %>
     </div>
@@ -59,10 +59,24 @@
   <%  @posts.each do |post| %>
     <div class="panel panel-default">
       <div class="panel-heading">
-         <h4><%= link_to "#{post.title}", "/cities/#{post.city.id}/posts/#{post.id}" %></h4>
+        <h4><%= link_to "#{post.title}", "/cities/#{post.city.id}/posts/#{post.id}" %></h4>
       </div>
       <div class="panel-body">
-        <p> <%= post.content %> Pour-over twee scenester. Retro street art quinoa, listicle cronut pour-over skateboard intelligentsia butcher chartreuse authentic small batch fap. Fixie hammock man braid vegan, pinterest kinfolk keffiyeh humblebrag man bun kitsch paleo 90's. Occupy trust fund pitchfork, letterpress disrupt portland lomo scenester street art listicle affogato selvage schlitz. Bitters pork belly tattooed, cold-pressed authentic chartreuse tote bag brunch kickstarter +1 mustache tumblr whatever sriracha.</p>
+        <p> <%= post.content %> </p>
+        <% if current_user != nil && current_user.id == @user.id %>
+          <br>
+          <div class="row">
+            <div class="pull-right">
+              <div class = "button-row">
+                <%= link_to "Edit Post", "/cities/#{post.city_id}/posts/#{post.id}/edit", method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg inline" %>
+                <%= link_to "Delete Post", "/cities/#{post.city_id}/posts/#{post.id}" , method: :delete, :class=>"ruby-link btn btn-danger inline btn-primary btn-lg inline", data: { confirm: 'Are you sure?' } %>
+                <%= link_to 'Test', '#', :class => "btn btn-default", "data-toggle" => "collapse", "data-target" => "delete-confirmation" %>
+              </div>
+              <div id="delete-confirmation" class="collapse">
+              </div>
+            </div>
+          </div>
+        <% end %>
       </div>
       <br>
     </div>
