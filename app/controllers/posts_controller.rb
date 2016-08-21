@@ -35,6 +35,7 @@ class PostsController < ApplicationController
     if auth_through_post
       @city = City.find(params[:city_id])
       @post.destroy
+      flash[:success] = "Your post titled \"#{@post.title}\" was successfully deleted from the #{@city.name} city page"
       redirect_to city_path(@city)
     else
       auth_fail("delete other people's posts", post_path)
