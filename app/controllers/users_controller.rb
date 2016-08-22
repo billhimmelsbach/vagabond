@@ -14,7 +14,6 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.image_url == ""
-      p "EMPTY URL"
       @user.image_url = "http://i.imgur.com/ixpF82Y.png"
     end
     if @user.save
