@@ -81,11 +81,8 @@ h1, h2, h3, h4 {
   display:inline !important;
 }
 
-.absolute-bottom-center {
+.absolute-bottom {
   position:absolute;
   bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-
   margin-bottom:2vh;
 }
