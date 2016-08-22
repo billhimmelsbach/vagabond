@@ -12,36 +12,44 @@
 </div>
 <br>
 
-<div class="well col-sm-10 col-sm-offset-1">
-  <legend>What you'll find...</legend>
-  <div class="col-sm-4 about">
-    <img class="img-responsive" src="http://i.imgur.com/i9x7MGD.png" class="demo">
-    <div class="col-sm-12">
-      <h3>Discover</h3>
-      <p>Find the in's and out's of a city you're curious about</p>
+<% if current_user %>
+  <div class="row welcome">
+    <h2>Welcome Back</h2>
+    <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
+    <h3>Which city would you like to explore?</h3>
+  </div>
+<% else %>
+  <div class="well col-sm-10 col-sm-offset-1">
+    <legend>What you'll find...</legend>
+    <div class="col-sm-4 about">
+      <img class="img-responsive" src="http://i.imgur.com/i9x7MGD.png" class="demo">
+      <div class="col-sm-12">
+        <h3>Discover</h3>
+        <p>Find the in's and out's of a city you're curious about</p>
+      </div>
+    </div>
+    <div class="col-sm-4 about">
+      <img class="img-responsive" src="http://i.imgur.com/wYohZAK.png" class="demo">
+      <div class="col-sm-12">
+        <h3>Share</h3>
+        <p>Write about your experience</p>
+      </div>
+    </div>
+    <div class="col-sm-4 about">
+      <img class="img-responsive" src="http://i.imgur.com/4OfNwAd.png" class="demo">
+      <div class="col-sm-12">
+        <h3>Community</h3>
+        <p>Find others with common experiences</p>
+      </div>
     </div>
   </div>
-  <div class="col-sm-4 about">
-    <img class="img-responsive" src="http://i.imgur.com/wYohZAK.png" class="demo">
-    <div class="col-sm-12">
-      <h3>Share</h3>
-      <p>Write about your experience</p>
-    </div>
-  </div>
-  <div class="col-sm-4 about">
-    <img class="img-responsive" src="http://i.imgur.com/4OfNwAd.png" class="demo">
-    <div class="col-sm-12">
-      <h3>Community</h3>
-      <p>Find others with common experiences</p>
-    </div>
-  </div>
-</div>
 
-<div class="row splashBtn">
-  <div>
-    <%= button_to "Sign Up Here", new_user_path, method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg" %>
+  <div class="row splashBtn">
+    <div>
+      <%= button_to "Sign Up Here", new_user_path, method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg" %>
+    </div>
   </div>
-</div>
+<% end %>
 <br>
 
 <div class= "col-xs-12 container-fluid">
