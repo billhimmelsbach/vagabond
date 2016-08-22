@@ -1,0 +1,21 @@
+<div class="jumbotron">
+  <div class = "col-xs-6 col-xs-offset-3">
+      <%= flash_messages %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="col-xs-12">
+    <div id="logbox">
+      <%= form_for :user, url: '/forgot', method: 'post' do |f| %>
+        <h1 class="formText">Enter your email</h1>
+        <p> (We'll send a reset password email to your inbox.) </p>
+        <%= f.text_field :email, placeholder: 'Email', class: "inputForm pass" %>
+
+        <%= f.submit "Reset Password", class: "forgotButton" %>
+      <% end %>
+			</form>
+
+    </div>
+  </div>
+</div>

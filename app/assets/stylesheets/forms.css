@@ -57,7 +57,23 @@
    .pass:-webkit-autofill {
        -webkit-box-shadow: 0 0 0 1000px white inset;
    }
+   .forgotLink {
+     color: #335ecc;
+   }
 
+   .forgotButton {
+     position: relative;
+     width: 85%;
+     height: 50px;
+     display: block;
+     margin: 30px auto 30px;
+     color: white;
+     background-color: #3CC;
+     border: none;
+     -webkit-box-shadow: 0 5px 0 #2CADAD;
+     -moz-box-shadow: 0 5px 0 #2CADAD;
+     box-shadow: 0 5px 0 #2CADAD;
+   }
    .inputButton {
        position: relative;
        width: 85%;
