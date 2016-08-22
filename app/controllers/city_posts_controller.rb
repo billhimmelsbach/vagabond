@@ -11,7 +11,7 @@ class CityPostsController < ApplicationController
     @city = City.find(params[:city_id])
     @post = Post.new(post_params)
     @post.user_id = session[:user_id]
-    if @user.image_url == ""
+    if @post.image == ""
       @post.image = "http://www.fantasticviewpoint.com/wp-content/uploads/2016/07/travel.jpg"
     end
     if @post.save
