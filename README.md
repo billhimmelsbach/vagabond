@@ -10,7 +10,7 @@
 
 ### ERD
 
-![ERD for Vagabond:](http://i.imgur.com/utnKSst.png "ERD for Vagabond")
+![ERD for Vagabond:](http://i.imgur.com/hpfYkVd.png "ERD for Vagabond")
 
 ## Technologies Used
 
