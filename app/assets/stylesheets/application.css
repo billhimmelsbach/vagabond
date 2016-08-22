@@ -64,6 +64,10 @@ h1, h2, h3, h4 {
   vertical-align:middle;
 }
 
+.btn a {
+  color:white;
+}
+
 .button-row {
   float:left;
   margin-right:10px;
@@ -75,4 +79,12 @@ h1, h2, h3, h4 {
 
 .inline {
   display:inline !important;
+}
+
+.absolute-bottom-center {
+  position:absolute;
+  bottom: 0;
+  margin-left:50%;
+  margin-right:50%;
+  margin-bottom:2vh;
 }
