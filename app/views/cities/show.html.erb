@@ -6,7 +6,7 @@
         <% if current_user %>
           <%= button_to "New post", "/cities/#{@city.id}/posts/new", method: :get, :class=>"ruby-link btn btn-success btn-primary btn-lg" %>
         <% else %>
-          <h2>Want to add new post?</h2><br>
+          <h2>Want to add a new post?</h2><br>
           <%= link_to "Sign up", new_user_path, :class=>"ruby-link btn btn-success btn-primary btn-lg inline" %>
           OR
           <%= link_to "Log In", new_session_path, :class=>"ruby-link btn btn-success btn-primary btn-lg inline" %>
