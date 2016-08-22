@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   has_secure_password
-  extend FriendlyId
-  friendly_id :first_name, use: [:slugged, :finders]
+  # extend FriendlyId
+  # friendly_id :first_name, use: [:slugged, :finders]
 
   has_many :posts
   has_many :cities, :through => :posts

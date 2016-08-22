@@ -14,7 +14,7 @@ class CityPostsController < ApplicationController
     if @post.save
       @city.posts.push(@post)
       flash[:success] = "Awesome! Your post titled \"#{@post.title}\" was successfully submitted to the #{@city.name} city page"
-      redirect_to city_path(@city)
+      redirect_to "/cities/#{@city.id}"
     else
       flash[:notice] = "Sorry bud, but we can't accept your post. And this is why. #{@post.errors.full_messages.join(', ')}. No big deal. Just try a new post, keeping this in mind. ;)"
       redirect_to "/cities/#{@city.id}/posts/new"
@@ -26,5 +26,5 @@ class CityPostsController < ApplicationController
   def post_params
     params.require(:post).permit(:title, :content, :image)
   end
-  
+
 end
