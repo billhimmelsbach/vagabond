@@ -4,27 +4,25 @@
   </div>
 </div>
 
-<h2 style="text-align:center"><strong>Edit</strong></h2>
+<h2 style="text-align:center"><strong>Edit User</strong></h2>
 <div class="register">
-  <%= form_for @user, html: { multipart: true } do |f| %>
-    <div class="form-group">
-      <%= f.file_field :image %>
-    </div>
-    <div>
+  <%= form_for @user do |f| %>
+    <div class="register-input">
       <%= f.text_field :first_name, placeholder: "First Name" %>
     </div>
-    <div>
+    <div class="register-input">
       <%= f.text_field :last_name, placeholder: "Last Name" %>
     </div>
-    <div>
+    <div class="register-input">
       <%= f.text_field :current_city, placeholder: "Current City" %>
     </div>
-    <div>
+    <div class="register-input">
       <%= f.text_field :email, placeholder: "Email" %>
     </div>
-    <div>
+    <div class="register-input">
       <%= f.password_field :password, placeholder: "Password" %>
     </div>
     <%= f.submit "Edit" %>
   <% end %>
 </div>
+<br />
