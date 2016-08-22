@@ -18,11 +18,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:post_id])
     if auth_through_post
       if @post.update(post_params)
+        flash[:success] = "#{@post.title} successfully updated"
         redirect_to post_path
       else
         render :edit
       end
     else
+      flash[:notice] = "#{@post.name} successfully updated"
       auth_fail("update other people's posts!", post_path)
     end
   end
@@ -44,5 +46,5 @@ class PostsController < ApplicationController
     def post_params
       params.require(:post).permit(:title, :content)
     end
-    
+
 end
