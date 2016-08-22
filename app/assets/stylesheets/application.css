@@ -82,7 +82,19 @@ h1, h2, h3, h4 {
 }
 
 .absolute-bottom {
-  position:absolute;
+  position: absolute;
   bottom: 0;
-  margin-bottom:2vh;
+  margin-bottom: 2vh;
+}
+
+.absolute-bottom-center {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 2vh;
+  left: 50%;
+  margin-right: -50%;
+}
+
+.row {
+  margin: 0 !important;
 }

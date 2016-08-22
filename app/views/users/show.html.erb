@@ -1,14 +1,21 @@
-<div class="jumbotron" style = "position: relative;">
-  <div class="text-center">
-    <button class = "absolute-bottom ruby-link btn btn-info btn-primary btn-lg inline ">
-      <%= link_to "Pick A New City", root_path%>
-    </button>
+<!-- <div class="col-xs-12"> -->
+<div class="jumbotron col-xs-12" style= "background-size: cover; position: relative; text-align: center;">
+  <div class="row">
+    <div class="absolute-bottom-center">
+      <button class="ruby-link btn btn-info btn-primary btn-lg">
+        <%= link_to "Pick A New City", root_path%>
+      </button>
+    </div>
   </div>
-  <div class = "col-xs-6 col-xs-offset-3">
-    <%= flash_messages %>
+  <div class="row">
+    <div class="col-xs-6 col-xs-offset-3">
+      <%= flash_messages %>
+    </div>
   </div>
 </div>
-<div class= "col-xs-10 col-xs-offset-1">
+</div>
+<div class="row">
+<div class="col-xs-10 col-xs-offset-1">
   <div class="col-xs-3">
     <div class="row">
       <img src="<%= @user.image_url%>" class="product_img img-responsive img-circle">
