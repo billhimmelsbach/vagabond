@@ -119,7 +119,7 @@ admin = User.create({
   first_name: "admin",
   last_name: "admin",
   email: "admin@test.com",
-  current_city: "Testico",
+  current_city: "Testville",
   password: "admin",
   image_url: "https://i.imgur.com/ixpF82Y.png"
 })
