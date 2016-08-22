@@ -10,8 +10,8 @@ class User < ActiveRecord::Base
   validates :current_city, length: { in: 2..20}, presence: true
 
   def self.confirm(params)
-    @user = User.find_by({email: params[:email]})
+    @user = User.where("email ILIKE ?", params[:email]).first
     @user.try(:authenticate, params[:password])
   end
-  
+
 end

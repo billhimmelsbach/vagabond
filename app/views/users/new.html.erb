@@ -4,27 +4,19 @@
   </div>
 </div>
 
-<h2 style="text-align:center"><strong>Sign Up</strong></h2>
-<div class="register">
-  <%= form_for @user, html: { multipart: true } do |f| %>
-    <div class="register-input">
-      <%= f.text_field :first_name, placeholder: "First Name" %>
+<div class="container">
+  <div class="col-xs-12">
+    <div id="logbox">
+      <%= form_for @user do |f| %>
+        <h1 class="formText">Sign Up</h1>
+        <%= f.text_field :first_name, placeholder: "First Name", class: "inputForm pass" %>
+        <%= f.text_field :last_name, placeholder: "Last Name", class: "inputForm pass" %>
+        <%= f.text_field :current_city, placeholder: "Current City", class: "inputForm pass" %>
+        <%= f.text_field :email, placeholder: "Email", class: "inputForm pass" %>
+        <%= f.password_field :password, placeholder: "Password", class: "inputForm pass" %>
+        <%= f.submit "Edit", class: "inputButton" %>
+      <% end %>
+			</form>
     </div>
-    <div class="register-input">
-      <%= f.text_field :last_name, placeholder: "Last Name" %>
-    </div>
-    <div class="register-input">
-      <%= f.text_field :current_city, placeholder: "Current City" %>
-    </div>
-    <div class="register-input">
-      <%= f.text_field :email, placeholder: "Email" %>
-    </div>
-    <div class="register-input">
-      <%= f.password_field :password, placeholder: "Password" %>
-    </div>
-    <div class="form-group">
-      <%= f.text_field :image_url, placeholder: "Image URL" %>
-    </div>
-    <%= f.submit "Sign Up" %>
-  <% end %>
+  </div>
 </div>
