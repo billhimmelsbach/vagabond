@@ -4,18 +4,17 @@
   </div>
 </div>
 
-<h2 style="text-align:center"><strong>New Post</strong></h2>
-<div class="register">
-  <%= form_for :post, url: new_city_post_path  do |f| %>
-    <div class="register-input">
-      <%= f.text_field :title, placeholder: "Title" %>
+<div class="container">
+  <div class="col-xs-12">
+    <div id="logbox">
+      <%= form_for :post, url: new_city_post_path  do |f| %>
+        <h1 class="formText">New Post</h1>
+        <%= f.text_field :title, placeholder: "Title", class: "inputForm pass" %>
+        <%= f.text_area :content, placeholder: "Content", class: "inputForm pass" %>
+        <%= f.text_field :image, placeholder: "Image", class: "inputForm pass" %>
+        <%= f.submit "Post", class: "inputButton" %>
+      <% end %>
+			</form>
     </div>
-    <div class="register-input">
-      <%= f.text_area :content, placeholder: "Content" %>
-    </div>
-    <div class="register-input">
-      <%= f.text_field :image, placeholder: "Image" %>
-    </div>
-    <%= f.submit "Post" %>
-  <% end %>
+  </div>
 </div>
