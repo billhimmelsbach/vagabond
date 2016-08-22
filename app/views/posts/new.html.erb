@@ -4,17 +4,17 @@
   </div>
 </div>
 
-<div class="container" >
-    <div class="col-xs-12" >
-        <div id="logbox"  >
-            <%= form_for :post, url: new_city_post_path  do |f| %>
-                <h1 class="formtext">New Post</h1>
-                <%= f.text_field :title, placeholder: "Title", class: "input pass" %>
-                <%= f.text_area :content, placeholder: "Content", class: "input pass" %>
-                  <%= f.text_field :image, placeholder: "Image", class: "input pass" %>
-                  <%= f.submit "Post", class: "inputButton" %>
-                <% end %>
-				</form>
-        </div>
+<div class="container">
+  <div class="col-xs-12">
+    <div id="logbox">
+      <%= form_for :post, url: new_city_post_path  do |f| %>
+        <h1 class="formText">New Post</h1>
+        <%= f.text_field :title, placeholder: "Title", class: "inputForm pass" %>
+        <%= f.text_area :content, placeholder: "Content", class: "inputForm pass" %>
+        <%= f.text_field :image, placeholder: "Image", class: "inputForm pass" %>
+        <%= f.submit "Post", class: "inputButton" %>
+      <% end %>
+			</form>
     </div>
+  </div>
 </div>
