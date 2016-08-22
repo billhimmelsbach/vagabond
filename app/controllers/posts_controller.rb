@@ -16,7 +16,7 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:post_id])
-    if @user.image_url == ""
+    if @post.image == ""
       @post.image = "http://www.fantasticviewpoint.com/wp-content/uploads/2016/07/travel.jpg"
     end
     if auth_through_post
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :content)
+      params.require(:post).permit(:title, :content, :image)
     end
 
 end
