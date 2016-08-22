@@ -4,17 +4,16 @@
   </div>
 </div>
 
-<h2 style="text-align:center"><strong>Log In</strong></h2>
-<div class="register">
-  <%= form_for @user, url: '/sessions', method: 'post' do |f| %>
-    <div>
-      <strong>Email:</strong><%= f.text_field :email, placeholder: 'Email' %>
+<div class="container">
+  <div class="col-xs-12">
+    <div id="logbox">
+      <%= form_for @user, url: '/sessions', method: 'post' do |f| %>
+        <h1 class="formText">Log In</h1>
+        <%= f.text_field :email, placeholder: 'Email', class: "inputForm pass" %>
+        <%= f.password_field :password, placeholder: 'Password', class: "inputForm pass" %>
+        <%= f.submit "Log In", class: "inputButton" %>
+      <% end %>
+			</form>
     </div>
-    <div>
-      <strong>Password:</strong><%= f.password_field :password, placeholder: 'Password' %>
-    </div>
-    <br />
-    <%= f.submit 'Log In' %>
-  <% end %>
+  </div>
 </div>
-<br />
