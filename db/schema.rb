@@ -24,6 +24,8 @@ ActiveRecord::Schema.define(version: 20160822075856) do
     t.string   "slug"
   end
 
+  add_index "cities", ["slug"], name: "index_cities_on_slug", using: :btree
+
   create_table "city_posts", force: :cascade do |t|
     t.integer  "city_id"
     t.integer  "post_id"
