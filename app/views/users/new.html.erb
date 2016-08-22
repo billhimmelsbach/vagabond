@@ -5,8 +5,11 @@
 </div>
 
 <div class="container">
+
   <div class="col-xs-12">
+
     <div id="logbox">
+      <p id="protip">Protip: <strong>Verify your email is correct before signup, as it is used for managing your account (e.g, password reset requests). </strong></p><br />
       <%= form_for @user do |f| %>
         <h1 class="formText">Sign Up</h1>
         <%= f.text_field :first_name, placeholder: "First Name", class: "inputForm pass" %>
