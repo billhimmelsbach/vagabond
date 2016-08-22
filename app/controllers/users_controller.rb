@@ -42,8 +42,12 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find_by_id(params[:id])
+    if @user.image_url == ""
+      @user.image_url = "http://i.imgur.com/ixpF82Y.png"
+    end
     if auth_through_user
       if @user.update(user_params)
+        flash[:success] = "Your profile was successfully updated"
         redirect_to @user
       else
         render :edit
