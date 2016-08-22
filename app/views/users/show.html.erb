@@ -1,6 +1,6 @@
 <div class="jumbotron" style = "position: relative;">
   <button class = "absolute-bottom-center ruby-link btn btn-info btn-primary btn-lg inline ">
-    <%= link_to "Back", root_path%>
+    <%= link_to "Pick A New City", root_path%>
   </button>
   <div class = "col-xs-6 col-xs-offset-3">
       <%= flash_messages %>
@@ -61,50 +61,64 @@
 </div>
 
 <div class="col-xs-9">
-  <%  @posts.each do |post| %>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4><%= link_to "#{post.title}", "/cities/#{post.city.id}/posts/#{post.id}" %></h4>
+  <% if @posts.count == 0 %>
+    <br>
+    <br>
+    <div class="panel panel-heading">
+      <h1 class="text-center"> Looks like you haven't made any posts yet! Head over to the city page and share your adventures!</h1>
+      <br>
+      <div class="text-center">
+        <button class = "ruby-link btn btn-info btn-primary btn-lg inline">
+          <%= link_to "Share Your Stories!", root_path%>
+        </button>
       </div>
-      <div class="panel-body">
-        <p> <%= post.content %> </p>
-        <% if current_user != nil && current_user.id == @user.id %>
-          <br>
-          <div class="row">
-            <div class="pull-right">
-              <div class = "button-row">
-                <%= link_to "Edit Post", "/cities/#{post.city_id}/posts/#{post.id}/edit", method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg inline" %>
-                <button class="ruby-link btn btn-danger inline btn-primary btn-lg inline" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                  Delete
-                </button>
-              </div>
-            </div>
+    </div>
+    <% else %>
+      <%  @posts.each do |post| %>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4><%= link_to "#{post.title}", "/cities/#{post.city.id}/posts/#{post.id}" %></h4>
           </div>
-          <div class = "row">
-            <div class="collapse" id="collapseExample">
-              <div class="well">
-                <h3 class="inline"> Are you sure you want to delete your post? </h3>
-                <div class = "row">
-                  <div class="col-xs-3">
-                  </div>
-                  <div class= "col-xs-6">
-                    <br>
-                    <button class="ruby-link btn btn-danger btn-primary btn-lg inline">
-                      <%= link_to "Delete Post", "/cities/#{post.city_id}/posts/#{post.id}" , method: :delete %>
-                    </button>
-                    <button class = "btn btn-success inline btn-primary btn-lg" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                      Cancel
+          <div class="panel-body">
+            <p> <%= post.content %> </p>
+            <% if current_user != nil && current_user.id == @user.id %>
+              <br>
+              <div class="row">
+                <div class="pull-right">
+                  <div class = "button-row">
+                    <%= link_to "Edit Post", "/cities/#{post.city_id}/posts/#{post.id}/edit", method: :get, :class=>"ruby-link btn btn-info btn-primary btn-lg inline" %>
+                    <button class="ruby-link btn btn-danger inline btn-primary btn-lg inline" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                      Delete
                     </button>
                   </div>
                 </div>
               </div>
+              <div class = "row">
+                <div class="collapse" id="collapseExample">
+                  <div class="well">
+                    <h3 class="inline"> Are you sure you want to delete your post? </h3>
+                    <div class = "row">
+                      <div class="col-xs-3">
+                      </div>
+                      <div class= "col-xs-6">
+                        <br>
+                        <button class="ruby-link btn btn-danger btn-primary btn-lg inline">
+                          <%= link_to "Delete Post", "/cities/#{post.city_id}/posts/#{post.id}" , method: :delete %>
+                        </button>
+                        <button class = "btn btn-success inline btn-primary btn-lg" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                          Cancel
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <% end %>
           </div>
+          <br>
         </div>
-        <% end %>
-      </div>
-      <br>
-    </div>
-  <% end %>
-</div>
+      <% end %>
+    <% end %>
+  </div>
 </div>
