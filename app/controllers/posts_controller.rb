@@ -16,6 +16,9 @@ class PostsController < ApplicationController
 
   def update
     @post = Post.find(params[:post_id])
+    if @user.image_url == ""
+      @post.image = "http://www.fantasticviewpoint.com/wp-content/uploads/2016/07/travel.jpg"
+    end
     if auth_through_post
       if @post.update(post_params)
         flash[:success] = "#{@post.title} successfully updated"
