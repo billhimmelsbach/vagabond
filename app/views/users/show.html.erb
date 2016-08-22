@@ -103,15 +103,15 @@
                 <div class="collapse" id="collapseExample">
                   <div class="well">
                     <h3 class="inline"> Are you sure you want to delete your post? </h3>
-                    <div class = "row">
+
                       <div class="col-xs-3">
                       </div>
                       <div class= "col-xs-6">
                         <br>
-                        <button class="ruby-link btn btn-danger btn-primary btn-lg inline">
-                          <%= link_to "Delete Post", "/cities/#{post.city_id}/posts/#{post.id}" , method: :delete %>
+                        <button class="ruby-link btn-danger btn-primary btn-lg inline">
+                          <%= link_to "Delete Post", "/cities/#{post.city_id}/posts/#{post.id}" , method: :delete, :class=>"ruby-link"%>
                         </button>
-                        <button class = "btn btn-success inline btn-primary btn-lg" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                        <button class = "btn-success btn-primary btn-lg inline" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                           Cancel
                         </button>
                       </div>
