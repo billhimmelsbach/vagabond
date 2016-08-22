@@ -17,6 +17,7 @@ class UsersController < ApplicationController
       @user.image_url = "http://i.imgur.com/ixpF82Y.png"
     end
     if @user.save
+      Mailer.welcome_email(@user).deliver_now
       login(@user)
       flash[:notice] = "Congratulations, you have been signed up! A registration e-mail has been delivered to your email address. We hope you enjoy the site!"
       redirect_to @user

@@ -52,8 +52,8 @@
           </li>
         <% end %>
       <% elsif @user.cities.distinct.count < 1 || nil %>
-        <p> Wow, <%= @user.first_name %> contributed <u>0</u> posts so far!</p>
-        <p> What are they waiting for? To get started, post about a favorite restaurant! </p>
+        <p> <%= @user.first_name %> has contributed <u>0</u> posts so far!</p>
+        <p> What are ya waiting for? To get started, post about a favorite restaurant! </p>
         <p>For us, it's <u><%=link_to "San Francisco","/cities/1" %></u>! </li>
         </p>
       <% end %>

@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get "/cities/:city_id/posts/:post_id/edit", to: "posts#edit", as: "edit_post"
   patch "/cities/:city_id/posts/:post_id", to: "posts#update", as: "update_post"
   delete "/cities/:city_id/posts/:post_id", to: "posts#destroy"
+  get '/forgot', to: "sessions#forgot", as: "forgot"
+  post '/forgot', to: "sessions#handleforgot"
 
   get "*unmatched_route", to: "application#not_found"
 end
