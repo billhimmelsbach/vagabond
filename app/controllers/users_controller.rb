@@ -27,21 +27,21 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find_by_id(params[:id])
-    # @user = User.friendly.find(params[:id].to_s.downcase)
-    @posts = Post.where(user_id: params[:id])
+
+    @user = User.friendly.find(params[:id].to_s.downcase)
+    @posts = @user.posts
     render :show
   end
 
   def edit
-    @user = User.find_by_id(params[:id])
+    @user = User.friendly.find(params[:id].to_s.downcase)
     if !auth_through_user
       auth_fail("edit other people's user information!", @user)
     end
   end
 
   def update
-    @user = User.find_by_id(params[:id])
+    @user = User.friendly.find(params[:id].to_s.downcase)
     if auth_through_user
       if @user.update(user_params)
         redirect_to @user
