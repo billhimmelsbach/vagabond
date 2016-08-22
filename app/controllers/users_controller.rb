@@ -28,7 +28,8 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.friendly.find(params[:id].to_s.downcase)
+    @user = User.find_by_id(params[:id])
+    # @user = User.friendly.find(params[:id].to_s.downcase)
     @posts = Post.where(user_id: params[:id])
     render :show
   end
