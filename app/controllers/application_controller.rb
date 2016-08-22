@@ -8,7 +8,4 @@ class ApplicationController < ActionController::Base
 	  render :not_found
   end
 
-  def errors?
-    flash_messages == true
-  end
 end
