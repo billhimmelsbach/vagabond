@@ -106,7 +106,7 @@ user_data = []
     email: FFaker::Internet.safe_email,
     current_city: FFaker::Address.city,
     password: "test",
-    image_url: "https://i.imgur.com/ixpF82Y.png"
+    image_url: FFaker::Avatar.image
   }
 end
 
@@ -160,12 +160,19 @@ puts "Seeded #{cities.count} cities."
 
 puts "-----------"
 
+post_image = [
+              "https://notrichorretiredblog.files.wordpress.com/2014/12/plane_sky_flying_sunset_64663_2560x1440.jpg",
+              "http://media.cmgdigital.com/shared/img/photos/2014/04/12/58/74/99_reasons_to_travel.jpg",
+              "http://kingofwallpapers.com/travel/travel-015.jpg"
+]
+
 cities.each do |city|
   12.times do
     city.posts.push(
     Post.create({
       title: city.name + "'s " + FFaker::CheesyLingo.title,
       content: "In #{city.name}, " + FFaker::CheesyLingo.sentence,
+      image: post_image.shuffle.sample,
       user_id: rand(1..10),
       city_id: rand(1..6)
     })
