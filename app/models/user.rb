@@ -16,4 +16,12 @@ class User < ActiveRecord::Base
     @user.try(:authenticate, params[:password])
   end
 
+  def city_count
+    @city_count ||= cities.distinct.count
+  end
+
+  def post_count
+    @post_count ||= posts.count
+  end
+
 end

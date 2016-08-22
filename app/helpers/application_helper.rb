@@ -17,4 +17,8 @@ module ApplicationHelper
     redirect_to post_path
   end
 
+  def fmt_date(date)
+    date.localtime.strftime("%B #{date.day.ordinalize}, %Y") + "!!!!"
+  end
+
 end

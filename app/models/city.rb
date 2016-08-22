@@ -6,7 +6,4 @@ class City < ActiveRecord::Base
   has_many :users, :through => :posts
 
 
-
-
-
 end
