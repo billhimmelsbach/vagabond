@@ -4,21 +4,17 @@
   </div>
 </div>
 
-
-<h2 style="text-align:center"><strong>Edit Post</strong></h2>
-<div class="register">
-  <%= form_for :post, url: update_post_path, method: :patch do |f| %>
-    <div class="register-input">
-      <%= f.text_field :title, placeholder: "Title" %>
+<div class="container">
+  <div class="col-xs-12">
+    <div id="logbox">
+      <%= form_for :post, url: update_post_path, method: :patch do |f| %>
+        <h1 class="formText">Edit Post</h1>
+        <%= f.text_field :title, placeholder: "Title", class: "inputForm pass" %>
+        <%= f.text_area :content, placeholder: "Content", class: "inputForm pass" %>
+        <%= f.text_field :image, placeholder: "Image", class: "inputForm pass" %>
+        <%= f.submit "Edit", class: "inputButton" %>
+      <% end %>
+			</form>
     </div>
-    <div class="register-input">
-      <%= f.text_area :content, placeholder: "Content" %>
-    </div>
-    <br />
-    <div class="register-input">
-      <%= f.text_field :image, placeholder: "Image" %>
-    </div>
-    <%= f.submit "Edit" %>
-  <% end %>
+  </div>
 </div>
-<br />
