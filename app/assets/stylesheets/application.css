@@ -119,3 +119,19 @@ h1, h2, h3, h4 {
 .row {
   margin: 0 !important;
 }
+
+.flasher-float {
+  position: absolute;
+  top: 12vh;
+  z-index:100;
+}
+
+.spacer {
+  min-height: 30vh;
+}
+
+.jumbotron-title{
+  background-size: cover;
+  position: relative;
+  text-align: center;
+} 
