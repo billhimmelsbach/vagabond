@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   root to: "users#splash"
-  resources :cities
+
   get "/users/new", to: "users#new", as: "new_user"
   post "/users", to: "users#create"
   get "/users/:id", to: "users#show", as: "user"
@@ -11,7 +11,7 @@ Rails.application.routes.draw do
   get "/users/:id/edit", to: "users#edit", as: "edit_user"
   patch "/users/:id", to: "users#update"
 
-
+  get "/cities/:id", to: "cities#show", as: "city"
 
   get "/cities/:city_id/posts/new", to: "posts#new", as: "new_post"
   post "/cities/:city_id/posts", to: "city_posts#create", as: "new_city_post"
@@ -20,9 +20,5 @@ Rails.application.routes.draw do
   patch "/cities/:city_id/posts/:post_id", to: "posts#update", as: "update_post"
   delete "/cities/:city_id/posts/:post_id", to: "posts#destroy"
 
-
-
   get "*unmatched_route", to: "application#not_found"
-
-  get '*id' => 'cities#show'
 end
