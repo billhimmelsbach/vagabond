@@ -1,11 +1,11 @@
-<div class="col-xs-6 col-xs-offset-3" style="position:absolute; top: 12vh; z-index:100">
+<div class="col-xs-6 col-xs-offset-3 flasher-float">
   <%= flash_messages %>
 </div>
 <div class ="row">
   <div class="card card-inverse col-xs-12 show-city-img" style="background-image: url('<%=@city.image %>');">
     <div class="card-img-overlay">
       <h1 class="card-title city-text"><%= "#{@city.name}" %></h1>
-      <div style="min-height:30vh">
+      <div class="spacer">
         <% if current_user %>
           <%= button_to "New post", "/cities/#{@city.id}/posts/new", method: :get, :class=>"ruby-link btn btn-success btn-primary btn-lg" %>
         <% else %>
