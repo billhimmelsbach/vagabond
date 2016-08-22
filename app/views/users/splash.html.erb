@@ -18,15 +18,17 @@
 </div>
 <br>
 
-<div class= "col-xs-10 col-xs-offset-1">
-  <div class="row">
-    <% @cities.each do |city|%>
-      <div class="card card-inverse col-xs-2" style="background-image: url('<%=city.image %>'); background-size: cover; color:white; height: 200px; width: 300px; text-align: center">
-        <div class="card-img-overlay">
-          <h4 class="card-title splash-city-text"><%= link_to "#{city.name}", "/cities/#{city.id}" %></h4>
+<div class= "col-xs-12 container-fluid">
+  <% @cities.in_groups_of(3, false).each do |city_array|%>
+    <div class="row city-row">
+      <% city_array.each do |city| %>
+        <div class="card card-inverse col-xs-4" style="background-image: url('<%=city.image %>'); background-size: cover; color:white; height: 45vh; text-align: center">
+          <div class="card-img-overlay">
+            <h4 class="card-title splash-city-text"><%= link_to "#{city.name}", "/cities/#{city.id}" %></h4>
+          </div>
         </div>
-      </div>
-    <% end %>
-  </div>
-<br />
+      <% end %>
+    </div>
+  <% end %>
+  <br />
 </div>
