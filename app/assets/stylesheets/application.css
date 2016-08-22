@@ -85,4 +85,7 @@ h1, h2, h3, h4 {
   position:absolute;
   bottom: 0;
   margin-bottom:2vh;
+
+.no-row {
+  margin: 0 !important;
 }
