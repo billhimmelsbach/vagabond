@@ -4,21 +4,20 @@
   </div>
 </div>
 
-<div class="titleSplashPage">
-  <h1 class="titleSplashPage"> Vagabond: The Destination for Travelers </h1>
-  <br>
-  <h4>Hello and welcome to Vagabond: a web destination for travelers!</h4>
-  <h4>Share your exciting stories and helpful advice about the far-flung cities you've explored!</h4>
-</div>
-<br>
-
 <% if current_user %>
   <div class="row welcome">
-    <h2>Welcome Back</h2>
-    <h2><%= current_user.first_name %> <%= current_user.last_name %></h2>
-    <h3>Which city would you like to explore?</h3>
+    <h1>Welcome Back <%= current_user.first_name %>!</h1>
+    <h2>Which city would you like to explore?</h2><br>
   </div>
 <% else %>
+  <div class="titleSplashPage">
+    <h1 class="titleSplashPage"> Vagabond: The Destination for Travelers </h1>
+    <br>
+    <h4>Hello and welcome to Vagabond: a web destination for travelers!</h4>
+    <h4>Share your exciting stories and helpful advice about the far-flung cities you've explored!</h4>
+  </div>
+  <br>
+
   <div class="well col-sm-10 col-sm-offset-1">
     <legend>What you'll find...</legend>
     <div class="col-sm-4 about">
