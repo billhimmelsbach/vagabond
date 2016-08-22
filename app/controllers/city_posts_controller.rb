@@ -11,6 +11,9 @@ class CityPostsController < ApplicationController
     @city = City.find(params[:city_id])
     @post = Post.new(post_params)
     @post.user_id = session[:user_id]
+    if @user.image_url == ""
+      @post.image = "http://www.fantasticviewpoint.com/wp-content/uploads/2016/07/travel.jpg"
+    end
     if @post.save
       @city.posts.push(@post)
       flash[:success] = "Awesome! Your post titled \"#{@post.title}\" was successfully submitted to the #{@city.name} city page"
