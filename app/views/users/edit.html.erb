@@ -4,27 +4,19 @@
   </div>
 </div>
 
-<h2 style="text-align:center"><strong>Edit</strong></h2>
-<div class="register">
-  <%= form_for @user, html: { multipart: true } do |f| %>
-    <div class="form-group">
-      <%= f.file_field :image %>
+<div class="container">
+  <div class="col-xs-12">
+    <div id="logbox">
+      <%= form_for @user do |f| %>
+        <h1 class="formText">Edit User</h1>
+        <%= f.text_field :first_name, placeholder: "First Name", class: "inputForm pass" %>
+        <%= f.text_field :last_name, placeholder: "Last Name", class: "inputForm pass" %>
+        <%= f.text_field :current_city, placeholder: "Current City", class: "inputForm pass" %>
+        <%= f.text_field :email, placeholder: "Email", class: "inputForm pass" %>
+        <%= f.password_field :password, placeholder: "Password", class: "inputForm pass" %>
+        <%= f.submit "Edit", class: "inputButton" %>
+      <% end %>
+			</form>
     </div>
-    <div>
-      <%= f.text_field :first_name, placeholder: "First Name" %>
-    </div>
-    <div>
-      <%= f.text_field :last_name, placeholder: "Last Name" %>
-    </div>
-    <div>
-      <%= f.text_field :current_city, placeholder: "Current City" %>
-    </div>
-    <div>
-      <%= f.text_field :email, placeholder: "Email" %>
-    </div>
-    <div>
-      <%= f.password_field :password, placeholder: "Password" %>
-    </div>
-    <%= f.submit "Edit" %>
-  <% end %>
+  </div>
 </div>
